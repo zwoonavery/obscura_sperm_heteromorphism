@@ -1,0 +1,15 @@
+# Path to PacBio assemblies and their HISAT indices.
+genomes:
+  Dpse:
+    fasta: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/genomic.gtf'
+
+# Path to a folder where final files will be written.
+OUT_DIR: 'results/'
+
+# Path to a JSON file with samples and their corresponding FASTQ files.
+SAMPLES_JSON: 'samples_pe.json'
+
+# HISAT2 run-specific parameters
+hisat2_params:
+  extra: "-p 8 --dta --rg-id {sample} --rg ID:{sample} --rg SM:{sample}"

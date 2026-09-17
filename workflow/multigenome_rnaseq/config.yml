@@ -1,0 +1,31 @@
+genomes:
+  Daff:
+    fasta: '/home/labshare/data/genomes/obscura_group/affinis/GCA_037356375.1/GCA_037356375.1_KU_Daffinis_5.1_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/affinis/GCA_037356375.1/GCA037356375_liftoff_GCF009870125.gtf'
+  Dazt:
+    fasta: '/home/labshare/data/genomes/obscura_group/azteca/GCA_005876895.1/GCA_005876895.1_DaztRS1_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/azteca/GCA_005876895.1/GCA005876895_liftoff_GCF009870125.gtf'
+  Dbif:
+    fasta: '/home/labshare/data/genomes/obscura_group/bifasciata/GCA_009664405.1/GCA_009664405.1_UCBerk_Dbif_1.0_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/bifasciata/GCA_009664405.1/GCA009664405_liftoff_GCF009870125.gtf'
+  Dgua:
+    fasta: '/home/labshare/data/genomes/obscura_group/guanche/GCF_900245975.1/GCF_900245975.1_DGUA_6_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/guanche/GCF_900245975.1/GCF900245975_liftoff_GCF009870125.gtf'
+  Dmad:
+    fasta: '/home/labshare/data/genomes/obscura_group/madeirensis/castillo_lab/madeirensis_alignedto_subobscura.fasta'
+    gtf: '/home/labshare/data/genomes/obscura_group/madeirensis/castillo_lab/castillo_dmad_liftoff_GCF009870125.gtf'
+  Dobs:
+    fasta: '/home/labshare/data/genomes/obscura_group/obscura/GCA_964023925.1/GCA_964023925.1_idDroObsc58.1_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/obscura/GCA_964023925.1/GCA964023925_liftoff_GCF009870125.gtf'
+  Dpse:
+    fasta: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/genomic.gtf'
+  Dsub:
+    fasta: '/home/labshare/data/genomes/obscura_group/subobscura/GCF_008121235.1/GCF_008121235.1_UCBerk_Dsub_1.0_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/subobscura/GCF_008121235.1/GCF008121235_liftoff_GCF009870125.gtf'
+
+# Path to the folders where output files will be written.
+OUT_DIR: 'results/'
+
+# Path to a JSON file with samples and their corresponding FASTQ files.
+SAMPLES_JSON: 'samples_pe.json'
