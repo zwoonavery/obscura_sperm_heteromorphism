@@ -11,8 +11,3 @@ To identify mutations and predict their effect, the DNA-seq reads from the mutan
 The single cell analysis was performed on the reads from He *et al.* 2026 and the tissue specificity calculation was performed on the reads from Yang *et al.* 2018 (BioProject PRJNA388952).
 
 To run the complete analysis notebook, all of the workflow outputs are required. The data required for each step of the analysis is specified in the relevant section.
-
-## Workflow
-
-
-## Analysis
