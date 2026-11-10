@@ -9,3 +9,6 @@ STREME version 5.5.8 in the MEME suite was used to identify motifs enriched in t
 
 ## Identify Associated Factors of Motifs with TomTom
 The output of the STREME results was then put into the TomTom web-based interface version 5.5.9 at https://meme-suite.org/meme/tools/tomtom. All of the base parameters were used to search the enriched motifs against the combined Drosophila databases.
+
+## Output
+Through running STREME and TomTom, the final output is a list of enriched motifs in the upstream region of the genes of interest as well as the list of known genetic factors that target these motifs.
