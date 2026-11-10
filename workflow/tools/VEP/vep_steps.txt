@@ -1,0 +1,14 @@
+## Steps needed to format GFF and FASTA for running with VEP
+
+
+## strip comment lines, sort in chromosome and position order, and compress
+grep -v "#" sr_reference/DpseSR.gff | sort -k1,1 -k4,4n -k5,5n -t$'\t' | bgzip -c > sr_reference/DpseSR.gff.gz
+
+## index the reformatted GFF
+tabix -p gff sr_reference/DpseSR.gff.gz
+
+## zip fasta
+bgzip sr_reference/DpeSR.fasta > sr_reference/DpseSR.fasta.gz
+
+## run VEP with own genome
+vep -i DpseSRMT.vcf.gz --gff sr_reference/DpseSR.gff.gz --fasta sr_reference/DpseSR.fasta.gz --everything -o vep_output.txt
