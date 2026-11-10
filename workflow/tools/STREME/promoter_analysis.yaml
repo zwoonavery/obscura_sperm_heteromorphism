@@ -4,10 +4,10 @@ channels:
   - bioconda
 dependencies:
   - python==3.14.0
+  - meme==5.5.8
   - bioconductor-biostrings
   - bioconductor-bsgenome
   - bioconductor-genomicfeatures
   - ipykernel
   - jupyter
-  - meme
   - r-tidyverse
