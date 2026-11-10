@@ -1,0 +1,21 @@
+# Path to assemblies and gtfs.
+genomes:
+  Dpse:
+    fasta: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna'
+    gtf: '/home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/genomic.gtf'
+
+# Path to a folder where final files will be written.
+OUT_DIR: 'results'
+
+# Path to database files and trinotate file.
+SQLITE: 'example.sqlite'
+UNIPROT: '/home/labshare/data/databases/trinotate_databases/uniprot_sprot.pep'
+PFAM: '/home/labshare/data/databases/trinotate_databases/Pfam-A.hmm'
+
+# Path to scripts
+SIGNALP_SCRIPT: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/signalp-4.1/signalp'
+RNAMMER_FOLDER: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/rnammer'
+RNAMMER_SCRIPT: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/Trinotate-Trinotate-v3.2.1/util/rnammer_support/RnammerTranscriptome.pl'
+TRINOTATE_IMAGE: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/trinotate.v4.0.2.simg'
+TRINOTATE_SCRIPT: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/Trinotate-Trinotate-v3.2.1/Trinotate'
+TRINOTATE_EXTRACT: '/home/labshare/scripts/snakemake_pipelines/annotation/multiple_genomes_trinotate/scripts/Trinotate-Trinotate-v3.2.1/util/extract_GO_assignments_from_Trinotate_xls.pl'
