@@ -1,0 +1,9 @@
+name: rkernel
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - ipykernel
+  - jupyter
+  - r-tidyverse
