@@ -1,0 +1,41 @@
+name: rkernel
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - bioconductor-annotationdbi
+  - bioconductor-biostrings
+  - bioconductor-complexheatmap
+  - bioconductor-edger
+  - bioconductor-genomicfeatures
+  - bioconductor-genomicranges
+  - bioconductor-iranges
+  - bioconductor-limma
+  - bioconductor-rsamtools
+  - bioconductor-ruvseq
+  - bioconductor-scater
+  - bioconductor-zellkonverter
+  - ipykernel
+  - jupyter
+  - r-biocmanager
+  - r-cellranger
+  - r-cowplot
+  - r-geosphere
+  - r-ggplot2
+  - r-ggpubr
+  - r-ggrepel
+  - r-ggsci
+  - r-gridextra
+  - r-irkernel
+  - r-janitor
+  - r-maps
+  - r-multcompview
+  - r-nlme
+  - r-pheatmap
+  - r-rcolorbrewer
+  - r-seurat
+  - r-sf
+  - r-tidyverse
+  - r-vegan
+  - r-viridis
