@@ -1,0 +1,11 @@
+name: yang2018_analysis
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - bioconductor-edger
+  - ipykernel
+  - jupyter
+  - r-janitor
+  - r-tidyverse
