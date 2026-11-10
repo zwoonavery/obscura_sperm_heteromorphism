@@ -4,6 +4,7 @@ channels:
   - bioconda
 dependencies:
   - python==3.14.0
+  - cagee==1.2
   - bioconductor-ggtree
   - bioconductor-treeio
   - ipykernel
