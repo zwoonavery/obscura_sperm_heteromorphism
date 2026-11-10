@@ -1,0 +1,16 @@
+name: scrna_analysis
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - bioconductor-mast
+  - bioconductor-scater
+  - bioconductor-zellkonverter
+  - ipykernel
+  - jupyter
+  - r-biocmanager
+  - r-ggplot2
+  - r-irkernel
+  - r-seurat
+  - r-tidyverse
