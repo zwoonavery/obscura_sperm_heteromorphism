@@ -1,7 +1,7 @@
 # Associating gene expression with sperm heteromorphism across the Drosophila obscura group
 This repository contains the bioinformatic workflow and analysis presented in:
 
-This project includes multigenome alignment of RNA-seq (`workflow/multigenome_rnaseq`), functional annotation of genes (`workflow/trinotate`), mutation identification and effect prediction (`workflow/tools/VEP`), phylogenetic gene expression analysis (`workflow/tools/CAGEE`), motif discovery (`workflow/tools/STREME`), as well as single-cell analysis (`workflow/he2026_rnaseq`) and tissue specificity calculations (`workflow/yang2018_rnaseq`). Each workflow has its own folder and pipeline that is able to be run independently as well as notebooks containing any workflow specific processing. The combined analysis of these outputs and the code to generate graphical representations is also included (`analysis`).
+This project includes multigenome alignment of RNA-seq (`workflow/multigenome_rnaseq`), functional annotation of genes (`workflow/trinotate`), mutation identification and effect prediction (`workflow/tools/VEP`), phylogenetic gene expression analysis (`workflow/tools/CAGEE`), motif discovery (`workflow/tools/STREME`), as well as single-cell analysis (`workflow/he2026_rnaseq`) and tissue specificity calculations (`workflow/yang2018_rnaseq`). Each workflow has its own folder and pipeline that is able to be run independently as well as notebooks containing any workflow specific processing. The combined analysis of these outputs and the code to generate graphical representations is also included (`analysis/`).
 
 ## Data
 To complete the multigenome RNA-seq, the RNA-seq reads from each species as well as the genome and genome annotation files are required. The genome for each species was downloaded from NCBI. These reference genomes were also used as the input for the gene functional annotation workflow. The read counts from the multigenome analysis were then used as the input for the phylogenetic analysis with the Kim *et al.* 2024 phylogenetic tree.
@@ -11,3 +11,8 @@ To identify mutations and predict their effect, the DNA-seq reads from the mutan
 The single cell analysis was performed on the reads from He *et al.* 2026 and the tissue specificity calculation was performed on the reads from Yang *et al.* 2018 (BioProject PRJNA388952).
 
 To run the complete analysis notebook, all of the workflow outputs are required. The data required for each step of the analysis is specified in the relevant section.
+
+## Environments
+The pipelines run in the (`workflow/`) folder were performed using Snakemake version 9.27.0. All of the required conda environments are stored within environment folders in the relevant pipeline folder with relative paths in the Snakefile. Modifications to the input of each pipeline are able to be performed to modifying the corresponding config file. Some tools used require individual downloads so, in these cases, the tool and version are specified in the dedicated documentation for each workflow. For best use and reproducibility, please read the documentation for each workflow to ensure all dependencies are prepared accordingly.
+
+Additionally, all analysis and processing were performed in Jupyter Notebooks with code from Jupyter version 1.1.1 in R version 4.5.3. The conda environments required to run these notebooks are included in the respective folders and each notebook calls all required packages at the beginning of the document. All environment set up specifications are included in the workflow and analysis documentation.
