@@ -1,0 +1,11 @@
+name: variant_analysis
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bowtie2==2.5.3
+  - cutadapt==3.4
+  - gatk==3.8
+  - liftoff==1.6.3
+  - picard
+  - tabix
