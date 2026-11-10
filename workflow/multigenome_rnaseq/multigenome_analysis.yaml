@@ -1,0 +1,24 @@
+name: rkernel
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - bioconductor-annotationdbi
+  - bioconductor-annotationhub
+  - bioconductor-clusterprofiler
+  - bioconductor-complexheatmap
+  - bioconductor-edger
+  - bioconductor-ruvseq
+  - ipykernel
+  - jupyter
+  - r-ggplot2
+  - r-ggpubr
+  - r-gridextra
+  - r-irkernel
+  - r-janitor
+  - r-patchwork
+  - r-rcolorbrewer
+  - r-tidyverse
+  - r-vegan
+  - r-viridis
