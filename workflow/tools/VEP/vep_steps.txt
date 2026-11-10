@@ -1,5 +1,49 @@
-## Steps needed to format GFF and FASTA for running with VEP
+# Create a new reference genome
 
+## index reference
+samtools faidx /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna
+
+## create sequence dictionary
+gatk CreateSequenceDictionary -R /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna 
+
+## create a SAM of the unaligned reads
+picard FastqToSam -F1 /home/labshare/data/dnaseq/obscura_group/pseudoobscura_sr/Dpse_SR.R1.fq.gz \
+-F2 /home/labshare/data/dnaseq/obscura_group/pseudoobscura_sr/Dpse_SR.R2.fq.gz -O DpseSR_unaligned.bam -SM Dpse_SR
+
+## Mark duplicates
+gatk MarkDuplicates -I DpseSR_mapped.bam -O DpseSR_markdup.bam -M DpseSR_markdup_metrics.txt
+
+## Merge aligned and unaligned reads into BAM
+gatk MergeBamAlignment --UNMAPPED_BAM DpseSR_unaligned.bam --ALIGNED_BAM DpseSR_mapped.bam -O DpseSR_merged.bam \
+-R /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna
+
+## Create VCF
+gatk HaplotypeCaller -R /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna \
+-I DpseSR_merged.bam -O DpseSR.vcf.gz
+
+## Create reference
+gatk FastaAlternateReferenceMaker -R /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna \
+-o DpeSR.fasta -V DpseSR.vcf.gz
+
+## Create GFF
+liftoff -g /home/yahmed-labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/genomic.gff -o sr_reference/DpseSR.gff DpeSR.fasta /home/labshare/data/genomes/obscura_group/pseudoobscura/GCF_009870125.1/GCF_009870125.1_UCI_Dpse_MV25_genomic.fna
+
+
+
+# Call variants
+
+## trim adapters
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -a CTGTCTCTTATACACATCT -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -A CTGTCTCTTATACACATCT --minimum-length 30 -q 20 -o DpseSRMT.R1.trimmed.fq.gz -p DpseSRMT.R2.trimmed.fq.gz DpseSRMT.R1.fq.gz DpseSRMT.R2.fq.gz
+
+## map reads
+bowtie -x index -1 DpseSRMT.R1.trimmed.fq.gz -2 DpseSRMT.R2.trimmed.fq.gz | samtools view -bS > DpseSR_mapped.bam
+
+## call variants
+gatk HaplotypeCaller -R DpeSR.fasta -I DpseSRMT.bam -O DpseSRMT.vcf.gz
+
+
+
+# Predict variant effects
 
 ## strip comment lines, sort in chromosome and position order, and compress
 grep -v "#" sr_reference/DpseSR.gff | sort -k1,1 -k4,4n -k5,5n -t$'\t' | bgzip -c > sr_reference/DpseSR.gff.gz
