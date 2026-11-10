@@ -1,0 +1,21 @@
+name: phylogenetic_analysis
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python==3.14.0
+  - bioconductor-ggtree
+  - bioconductor-treeio
+  - ipykernel
+  - jupyter
+  - r-ape
+  - r-ggplot2
+  - r-ggpubr
+  - r-gridextra
+  - r-irkernel
+  - r-janitor
+  - r-rcolorbrewer
+  - r-tidyverse
+  - r-treetools
+  - r-vegan
+  - r-viridis
